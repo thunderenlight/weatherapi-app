@@ -163,7 +163,7 @@ const submitNewLocation =  async (event) => {
             displayApiError(coordsData);
         }
     } else {
-        displayError( "Connection Error")
+        displayError( "Connection! Error!")
     }
 
 }
@@ -171,6 +171,6 @@ const submitNewLocation =  async (event) => {
 const updateDateAndDisplay = async (locationObj) => {
     const weatherJson = await getWeatherFromCoords(locationObj)
     if (weatherJson) updateDisplay(weatherJson, locationObj)
-    console.log(locationObj)
+    console.log("here", locationObj)
 
 }

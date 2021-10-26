@@ -3,7 +3,7 @@ const fetch = require("node-fetch");
 const { WEATHERKEY } = process.env;
 
 exports.handler = async (event, context) => {
-    const  params = JSON.parse(event.body );
+    const  params = JSON.parse(event.body);
     const {lat, lon, units } = params;
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=${units}&appid=${WEATHERKEY}`;
   try {

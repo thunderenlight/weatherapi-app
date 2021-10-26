@@ -29,13 +29,15 @@ export const getWeatherFromCoords = async (locationObj) => {
 //         console.error(err);
 //     } 
 // }
-const urlDataObj = {
-     lat:  locationObj.getLat(),
-     lon:  locationObj.getLon(),
-     units:  locationObj.getUnit()
+    const urlDataObj = {
+        lat: locationObj.getLat(),
+        lon: locationObj.getLon(),
+        units: locationObj.getUnit()
     };
     try {
-        const weatherStream = await fetch("./.netlify/functions/get_weather", { method: "POST", body: JSON.stringify(urlDataObj)
+        const weatherStream = await fetch("./.netlify/functions/get_weather", {
+             method: "POST", 
+             body: JSON.stringify(urlDataObj)
         });
         const weatherJson = await weatherStream.json();
         return weatherJson;
