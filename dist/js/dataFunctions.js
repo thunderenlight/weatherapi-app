@@ -37,7 +37,7 @@ const urlDataObj = {
     try {
         const weatherStream = await fetch("./.netlify/functions/get_weather", { method: "POST", body: JSON.stringify(urlDataObj)
         });
-        const weatherJson = await weatherStream.json(urlDataObj);
+        const weatherJson = await weatherStream.json();
         return weatherJson;
     } catch (err) {
         console.error(err)
